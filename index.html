@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.8em; text-align: center; margin-bottom: .88rem;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="apparel-grid">
+    <div class="cell logo">
+      <img src="./images/logo.svg" alt="logo-icon">
+    </div>
+    <div class="cell feeds">
+      <div class="up-to-date">
+        <div class="text">
+          <h1><span>We're</span><br> coming<br> soon</h1>
+          <p> Hello fellow shoppers! We're currently building our new fashion store. 
+            Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        </div>
+        <div class="subscribe">
+          <div class="newsletter">
+            <img src="./images/icon-error.svg" alt="" class="error-img">
+            <input type="text" id="email" placeholder="Email Address" onfocus="this.placeholder=''"
+            onblur="this.placeholder='Email Address'">
+            <a href="#"><img src="./images/icon-arrow.svg" alt="arrow-icon" class="arrow"></a>
+          </div>
+          <div class="error-message">
+            <span class="empty">"Please enter your email address!</span>
+            <span class="format">Uh oh! That email address doesn't seem quite right!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cell image"></div>
+  </div>
+</div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Naglaa Raslan</a>.
+    </p>
+  </footer>
+</body>
+</html>

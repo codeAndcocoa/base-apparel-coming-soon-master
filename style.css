@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,600;1,600&display=swap");
+
+:root {
+  --primary1: hsl(0, 36%, 70%); /* Desaturated Red */
+  --primary2: hsl(0, 93%, 68%); /* Soft Red  */
+  --neutral1: hsl(0, 6%, 24%); /* Dark Grayish Red:  */
+  --gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background: url(./images/bg-pattern-desktop.svg), var(--gradient1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 1.3rem;
+}
+
+.container {
+  flex: 3;
+  width: 100%;
+  height: auto;
+}
+footer {
+  flex: 1;
+}
+
+/*** apparel grid  */
+.apparel-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+/* Logo part */
+.logo {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.logo img {
+  width: 120px;
+  margin: 2rem;
+}
+/* Feeds part */
+.feeds {
+  grid-area: 2 / 1 / 5 / 2;
+}
+.up-to-date {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+.text,
+.subscribe {
+  width: 100%;
+}
+.newsletter,
+.error-message {
+  width: 100%;
+}
+.text{
+    margin-bottom: 1.88rem;
+}
+.text h1 {
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: var(--neutral1);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  margin-bottom: 1rem;
+}
+.text h1 span {
+  color: var(--primary1);
+  font-weight: 300;
+}
+.text p {
+  color: var(--primary1);
+  line-height: 1.5;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+/* Subscribe part */
+.newsletter {
+  position: relative;
+  margin-top: 1rem;
+}
+.error-img {
+  position: absolute;
+  right: 7rem;
+  top: 2rem;
+  display: none;
+}
+#email {
+  border: 1px solid hsl(0, 6%, 24%, 0.5);
+  outline: none;
+  height: 3rem;
+  width: 95%;
+  border-radius: 50px;
+  background: transparent;
+  padding-left: 0.7rem;
+}
+#email::placeholder {
+  font-size: 1rem;
+  padding-left: 1rem;
+  color: hsl(0, 6%, 24%, 0.5);
+  font-weight: 300;
+}
+.newsletter {
+  padding: 1.2rem;
+}
+.newsletter a {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  background: var(--gradient2);
+  position: absolute;
+  right: 0rem;
+  box-shadow: 0px 1px 10px var(--primary1);
+  text-decoration: none;
+
+}
+.newsletter a:hover {
+  background: hsl(0, 80%, 86%);
+}
+.newsletter a img {
+  vertical-align: middle;
+}
+.empty,
+.format {
+  font-size: 1rem;
+  color: var(--primary2);
+  display: none;
+  margin-left: 2rem;
+  margin-top: -0.3rem;
+}
+
+/* Image part */
+.image {
+  background-image: url("./images/hero-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-area: 1 / 2 / 5 / 4;
+}
+
+/* Media queries */
+@media screen and (max-width: 600px) {
+  .up-to-date {
+    max-width: 95%;
+  }
+  .error-img {
+    width: 1.2rem;
+    top: 2rem;
+  }
+  .newsletter a {
+    padding: 1rem 1.5rem;
+    right: 0.9rem;
+  }
+  .empty,
+  .format {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .apparel-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.8fr 2fr auto;
+  }
+  .cell {
+    grid-area: auto;
+  }
+  .logo {
+    order: 1;
+  }
+  .image {
+    order: 2;
+  }
+  .feeds {
+    order: 3;
+  }
+  .image {
+    background-image: url("./images/hero-mobile.jpg");
+  }
+  .text {
+    text-align: center;
+    margin: auto;
+   
+  }
+  .text h1 {
+    font-size: 2.5rem;
+  }
+}
